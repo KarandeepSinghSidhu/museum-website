@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bob Doran Museum of Computing</title>
+    <link rel="stylesheet" href="ksin513.css" />
+    <link rel="icon" type="image/png" href="https://cws.auckland.ac.nz/museum/api/Logo" />
+  </head>
+
+
+  <script defer="defer" src="ksin513.js"></script>
+
+  <body>
+    <header>
+      <h1>Bob Doran Museum of Computing</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#artefacts">Artefacts</a>
+        <a href="#register">Register</a>
+        <a href="#guestbook">Guestbook</a>
+        <a href="#events">Events</a>
+        <a href="#visits">Visits</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p id="about-text"></p>
+      </section>
+
+      <section id="artefacts" style="display: none">
+        <h2>Artefacts</h2>
+        <input
+          type="text"
+          id="artefact-search"
+          placeholder="Search artefacts"
+        />
+        <div id="artefact-list" class="flex-container"></div>
+      </section>
+
+      <section id="register" style="display: none">
+        <h2>Register</h2>
+        <div id="register-form">
+          <input type="text" id="reg-username" placeholder="Username" />
+          <input type="password" id="reg-password" placeholder="Password" />
+          <button type="button" id="register-btn">Register</button>
+        </div>
+      </section>
+
+      <!-- Guestbook Section -->
+      <section id="guestbook" style="display: none">
+        <h2>Guestbook</h2>
+
+        <!-- Comment box -->
+        <div id="comment-box" style="margin-bottom: 1em">
+          <textarea
+            id="comment-text"
+            rows="4"
+            cols="50"
+            placeholder="Write your comment here..."
+          ></textarea>
+          <br />
+          <button type="button" id="submit-comment-btn">Submit Comment</button>
+        </div>
+
+        <h2>Comments</h3>
+
+        <iframe
+          id="comments-iframe"
+          src="https://cws.auckland.ac.nz/museum/api/Comments"
+          width="100%"
+          height="300"
+        ></iframe>
+      </section>
+
+      <!-- Login Modal -->
+<div id="login-modal" class="modal" style="display: none">
+  <div class="modal-content">
+    <span class="close-login">&times;</span>
+    <h2>Login Required</h2>
+    <input type="text" id="login-username" placeholder="Username" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button type="button" id="login-btn">Login</button>
+  </div>
+</div>
+
+<!-- Response Modal -->
+<div id="response-modal" class="modal" style="display: none">
+  <div class="modal-content">
+    <span class="close-response">&times;</span>
+    <pre id="response-text" style="white-space: pre-wrap"></pre>
+  </div>
+</div>
+
+      <section id="events" style="display: none">
+        <h2>Upcoming Events</h2>
+        <div
+          id="events-container"
+          style="display: flex; flex-wrap: wrap; gap: 1em"
+        ></div>
+      </section>
+
+      <section id="visits" style="display: none">
+        <h2>Visitor Statistics</h2>
+        <div style="width: 100%; max-width: 800px; margin: auto;">
+          <svg id="visits-graph" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: auto;"></svg>
+          <div id="legend" style="margin-top: 8px; text-align: center;"></div>
+        </div>
+        <pre id="visits-raw"></pre>
+
+      </section>
+    </main>
+
+    <footer id="footer-text"></footer>
+
+  </body>
+</html>
