@@ -21,7 +21,7 @@ A single-page web application for the Bob Doran Museum of Computing at the Unive
 No build step required. Just open `ksin513.html` in a browser.
 
 ```bash
-open ksin513.html
+ksin513.html
 ```
 
 > Note: Some features (guestbook, register) require a valid museum account.
